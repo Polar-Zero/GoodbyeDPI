@@ -177,7 +177,7 @@ static struct option long_options[] = {
     {"dnsv6-port",  required_argument, 0,  '@' },
     {"dns-verb",    no_argument,       0,  'v' },
     {"blacklist",   required_argument, 0,  'b' },
-    {"whitelist",   required_argument, 0,  't' },
+    {"whitelist",   required_argument, 0,  'l' },
     {"allow-no-sni",no_argument,       0,  ']' },
     {"frag-by-sni", no_argument,       0,  '>' },
     {"ip-id",       required_argument, 0,  'i' },
@@ -870,7 +870,7 @@ int main(int argc, char *argv[]) {
                     exit(ERROR_BLACKLIST_LOAD);
                 }
                 break;
-            case 't': // --whitelist
+            case 'l': // --whitelist
                 do_whitelist = 1;
                 if (!blackwhitelist_load_whitelist(optarg)) {
                     printf("Can't load whitelist from file!\n");
